@@ -1,0 +1,295 @@
+/* ============================================
+   Login Page
+   ============================================ */
+
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  background: var(--hero-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  overflow: hidden;
+}
+
+.login-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.login-card {
+  width: 100%;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: loginSlideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes loginSlideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-header h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: var(--gray-900);
+}
+
+.login-header p {
+  color: var(--gray-500);
+  font-size: 15px;
+}
+
+/* Form Styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password-link {
+  font-size: 13px;
+  color: var(--green-600);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  padding-right: 44px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--gray-900);
+  transition: all var(--transition-fast);
+}
+
+.form-group input:focus {
+  outline: none;
+  background: var(--white);
+  border-color: var(--green-500);
+  box-shadow: 0 0 0 3px var(--green-100);
+}
+
+/* Password Toggle */
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 100;
+  pointer-events: all;
+}
+
+
+.password-toggle:hover {
+  color: var(--gray-600);
+}
+
+.btn-submit {
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* Divider */
+.login-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.login-divider span {
+  padding: 0 16px;
+  color: var(--gray-400);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+/* Footer */
+.login-footer {
+  text-align: center;
+}
+
+.login-footer p {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+.register-link {
+  color: var(--green-600);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 32px 20px;
+  }
+}
+
+/* Role Selector Tiles (Matches Registration Page) */
+.role-selector {
+  display: flex;
+  gap: 12px;
+}
+
+.role-tile {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 8px;
+  background: var(--gray-50);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.role-tile:hover {
+  background: var(--green-50);
+  border-color: var(--green-200);
+}
+
+.role-tile--active {
+  background: var(--green-50) !important;
+  border-color: var(--green-500) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+}
+
+.role-tile--active .role-icon,
+.role-tile--active span {
+  color: var(--green-700);
+}
+
+.role-icon {
+  color: var(--gray-500);
+  transition: color var(--transition-fast);
+}
+
+.role-tile span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.role-badge-check {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  background: var(--green-500);
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.role-badge-check svg {
+  width: 12px;
+  height: 12px;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

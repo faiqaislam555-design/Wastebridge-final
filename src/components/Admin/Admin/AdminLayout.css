@@ -1,0 +1,7 @@
+/* AdminLayout inherits mostly from dashboard/styles/Dashboard.css 
+   but we can add specific admin layout overrides here */
+
+   .dashboard-sidebar .admin-avatar {
+    background-color: var(--gray-800);
+    color: var(--white);
+  }

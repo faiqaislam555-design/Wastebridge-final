@@ -1,0 +1,115 @@
+/* ============================================
+   Impact Section
+   ============================================ */
+
+.impact {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 40%, #047857 100%);
+  overflow: hidden;
+}
+
+.impact__bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(110, 231, 183, 0.1) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.impact__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.impact--visible .impact__content {
+  animation: impactIn 0.7s ease-out forwards;
+}
+
+@keyframes impactIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.impact__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a7f3d0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.impact__title {
+  font-size: clamp(28px, 4vw, 42px);
+  color: white;
+  letter-spacing: -0.02em;
+  max-width: 600px;
+}
+
+.impact__metrics {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin: 16px 0;
+}
+
+.impact__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.impact__metric-value {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.impact__metric-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.impact__divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.impact__cta {
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .impact {
+    padding: 70px 0;
+  }
+
+  .impact__metrics {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .impact__divider {
+    width: 60px;
+    height: 1px;
+  }
+}

@@ -1,0 +1,160 @@
+.shared-topbar {
+  height: 80px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.shared-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f3f4f6;
+  padding: 10px 20px;
+  border-radius: 12px;
+  width: 350px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.shared-search-bar:focus-within {
+  background: #fff;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.1);
+  width: 400px;
+}
+
+.shared-search-bar svg {
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.shared-search-bar:focus-within svg {
+  color: #16a34a;
+}
+
+.shared-search-bar input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.shared-search-bar input::placeholder {
+  color: #9ca3af;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.shared-user-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px;
+  padding-right: 6px;
+  border-radius: 50px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.shared-user-menu:hover {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.user-avatar-wrapper {
+  width: 36px;
+  height: 36px;
+  background: #16a34a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(22, 163, 74, 0.2);
+}
+
+.user-menu-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-menu-text .user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1;
+}
+
+.user-menu-text .user-role {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  border-radius: 10px;
+  color: #4b5563;
+  transition: all 0.2s;
+}
+
+.mobile-menu-btn:hover {
+  background: #f9fafb;
+  color: #111827;
+}
+
+@media (max-width: 1024px) {
+  .shared-search-bar {
+    width: 250px;
+  }
+  .shared-search-bar:focus-within {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shared-topbar {
+    padding: 0 20px;
+    height: 70px;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .hidden-mobile {
+    display: none !important;
+  }
+}

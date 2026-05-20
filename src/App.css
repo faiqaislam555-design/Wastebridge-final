@@ -1,0 +1,42 @@
+/* ============================================
+   App — Global Layout Overrides
+   ============================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app main {
+  flex: 1;
+}
+
+/* Smooth scroll anchors offset for sticky nav */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(16, 185, 129, 0.2);
+  color: inherit;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-500);
+}

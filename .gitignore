@@ -1,0 +1,23 @@
+# Environment variables
+.env
+.env.local
+
+# Database
+*.db
+*.sqlite
+
+# Python
+__pycache__/
+venv/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+
+# Build
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db 

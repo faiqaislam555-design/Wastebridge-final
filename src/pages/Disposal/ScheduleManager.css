@@ -1,0 +1,468 @@
+/* ============================================
+   D4 — Schedule Manager Page Styles
+   ============================================ */
+
+.schedule-manager-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* ── Schedule Stats Strip ── */
+.schedule-stats-strip {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.schedule-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.schedule-stat-number {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gray-900);
+  font-family: var(--font-heading);
+}
+
+.schedule-stat-blue { color: #1d4ed8; }
+.schedule-stat-gray { color: var(--gray-500); }
+.schedule-stat-green { color: var(--green-600); }
+
+.schedule-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.schedule-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--gray-200);
+}
+
+/* ── Controls Bar ── */
+.controls-bar {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.controls-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.controls-left .segment-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.export-route-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.pickup-count-badge {
+  background: var(--green-50);
+  color: var(--green-700);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Schedule List ── */
+.schedule-list-card {
+  padding: 24px;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.schedule-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--gray-100);
+  transition: background var(--transition-fast);
+}
+
+.schedule-item:hover {
+  background: var(--gray-50);
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: var(--radius-sm);
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.schedule-item:first-child {
+  padding-top: 0;
+}
+
+/* Newly added items from Accept */
+.schedule-item.newly-added {
+  border-left: 3px solid var(--green-400);
+  padding-left: 16px;
+}
+
+.new-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background: var(--green-100);
+  color: var(--green-700);
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+}
+
+.schedule-time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 80px;
+}
+
+.schedule-time {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+  font-family: var(--font-heading);
+}
+
+.schedule-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-dot-in-progress {
+  background: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.status-dot-upcoming {
+  background: var(--gray-300);
+}
+
+.status-dot-completed {
+  background: var(--green-500);
+}
+
+.schedule-info-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.schedule-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.schedule-info-header h4 {
+  font-size: 15px;
+  margin: 0;
+  color: var(--gray-900);
+}
+
+.schedule-info-details {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.schedule-info-details span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
+.schedule-info-details svg {
+  color: var(--gray-400);
+}
+
+/* ── Empty State ── */
+.empty-state-inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 20px;
+  color: var(--gray-400);
+  text-align: center;
+}
+
+.empty-state-inline p {
+  font-size: 14px;
+  color: var(--gray-500);
+  margin: 0;
+  max-width: 300px;
+}
+
+/* ── Calendar View ── */
+.calendar-card {
+  padding: 24px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.calendar-header h2 {
+  font-size: 20px;
+  margin: 0;
+  min-width: 200px;
+  text-align: center;
+}
+
+.calendar-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.calendar-nav-btn:hover {
+  background: var(--gray-200);
+  color: var(--gray-900);
+}
+
+.today-btn {
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--green-50);
+  color: var(--green-700);
+  border: 1px solid var(--green-200);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.today-btn:hover {
+  background: var(--green-100);
+  border-color: var(--green-400);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day-header {
+  text-align: center;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-500);
+  text-transform: uppercase;
+}
+
+.calendar-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: var(--radius-md);
+  cursor: default;
+  transition: background var(--transition-fast);
+  position: relative;
+}
+
+.calendar-cell.empty {
+  background: transparent;
+}
+
+.calendar-cell:not(.empty):hover {
+  background: var(--gray-50);
+}
+
+.cell-day {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.calendar-cell.today {
+  background: var(--green-50);
+  border: 2px solid var(--green-400);
+}
+
+.calendar-cell.today .cell-day {
+  font-weight: 700;
+  color: var(--green-700);
+}
+
+.calendar-cell.has-pickups .cell-day {
+  font-weight: 600;
+}
+
+.cell-dot-group {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.cell-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green-500);
+}
+
+.cell-count {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green-600);
+}
+
+/* ── Calendar Legend ── */
+.calendar-legend {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.legend-dot-today {
+  background: var(--green-50);
+  border: 2px solid var(--green-400);
+}
+
+.legend-dot-pickup {
+  background: var(--green-500);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .schedule-stats-strip {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .schedule-stat-divider {
+    display: none;
+  }
+
+  .controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .export-route-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .schedule-item:hover {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .schedule-item.newly-added {
+    padding-left: 16px;
+  }
+
+  .schedule-time-col {
+    flex-direction: row;
+    min-width: auto;
+  }
+
+  .schedule-info-details {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .calendar-cell {
+    aspect-ratio: auto;
+    padding: 8px 4px;
+  }
+
+  .calendar-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .calendar-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

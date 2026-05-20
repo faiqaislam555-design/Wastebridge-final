@@ -1,0 +1,118 @@
+.header-dropdown-container {
+  position: relative;
+}
+
+.header-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  z-index: 1050;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.header-dropdown-menu.notifications {
+  width: 280px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: var(--gray-700);
+  text-decoration: none;
+  font-size: 14px;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background: var(--gray-50);
+  color: var(--green-600);
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--gray-200);
+  margin: 8px 0;
+}
+
+.dropdown-header {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  border-bottom: 1px solid var(--gray-100);
+  margin-bottom: 4px;
+}
+
+.notification-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.notification-desc {
+  font-size: 12px;
+  color: var(--gray-600);
+}
+
+@media (max-width: 768px) {
+  .header-dropdown-menu {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    border-radius: 16px 16px 0 0;
+    padding: 16px 0 32px 0;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+    animation: slideUp 0.3s ease-out;
+  }
+  .header-dropdown-menu.notifications {
+    width: 100%;
+  }
+  
+  .dropdown-item {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+
+  .dropdown-header {
+    padding: 16px 24px 8px 24px;
+    font-size: 14px;
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}

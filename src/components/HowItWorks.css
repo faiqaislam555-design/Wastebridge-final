@@ -1,0 +1,108 @@
+/* ============================================
+   How It Works
+   ============================================ */
+
+.hiw {
+  padding: var(--section-padding);
+  background: var(--bg-primary);
+}
+
+.hiw__header {
+  text-align: center;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hiw__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hiw__step {
+  text-align: center;
+  padding: 40px 28px;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  transition: all var(--transition-base);
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hiw--visible .hiw__step {
+  animation: stepFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes stepFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hiw__step:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--green-200);
+}
+
+.hiw__step-number {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--gray-100);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.hiw__step-icon {
+  margin-bottom: 20px;
+  display: inline-flex;
+}
+
+.hiw__step-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.hiw__step-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.hiw__connector {
+  position: absolute;
+  right: -46px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .hiw__steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hiw__connector {
+    display: none;
+  }
+
+  .hiw__step {
+    padding: 32px 24px;
+  }
+}

@@ -1,0 +1,138 @@
+/* ============================================
+   Who It's For
+   ============================================ */
+
+.wif {
+  padding: var(--section-padding);
+  background: var(--bg-secondary);
+}
+
+.wif__header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wif__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wif__card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all var(--transition-base);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.wif--visible .wif__card:first-child {
+  animation: cardSlideIn 0.6s ease-out forwards;
+}
+
+.wif--visible .wif__card:last-child {
+  animation: cardSlideIn 0.6s ease-out 0.15s forwards;
+}
+
+@keyframes cardSlideIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wif__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.wif__card-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.wif__card-badge--green {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.wif__card-badge--teal {
+  background: #f0fdf4;
+  color: #047857;
+}
+
+.wif__card-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.wif__card-subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.wif__card-section h4 {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.wif__pain-list,
+.wif__check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wif__pain-list li,
+.wif__check-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.wif__pain-list li span {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.wif__check-list li svg {
+  flex-shrink: 0;
+}
+
+.wif__card .btn {
+  margin-top: 12px;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .wif__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .wif__card {
+    padding: 32px 24px;
+  }
+}
