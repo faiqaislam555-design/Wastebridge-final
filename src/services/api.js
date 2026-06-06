@@ -2,7 +2,7 @@
 // WasteBridge API Service — complete & corrected
 // ──────────────────────────────────────────────
 
-const API_BASE = 'http://localhost:8000';
+const API_BASE = 'https://wastebridge-backend.onrender.com';
 
 function getToken() {
   return localStorage.getItem('wb_token');
