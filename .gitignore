@@ -2,9 +2,6 @@
 .env
 .env.local
 
-# Database
-*.db
-*.sqlite
 
 # Python
 __pycache__/
