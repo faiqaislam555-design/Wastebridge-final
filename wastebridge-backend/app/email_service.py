@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 resend.api_key = os.getenv("RESEND_API_KEY", "")
 FROM_NAME = os.getenv("FROM_NAME", "WasteBridge")
-FROM_EMAIL = "onboarding@resend.dev"  # Resend's free sender
+FROM_EMAIL = "noreply@wastebridge.online" 
 APP_URL = os.getenv("APP_URL", "http://localhost:5173")
 
 
