@@ -47,7 +47,7 @@ useEffect(() => {
     const fetchInvoices = async () => {
         try {
             const token = localStorage.getItem('wb_token');
-            const res = await fetch('http://127.0.0.1:8000/api/invoices/', {
+            const res = await fetch('https://wastebridge-backend.onrender.com/api/invoices/', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();
@@ -144,7 +144,7 @@ useEffect(() => {
   const fetchInvoices = async () => {
     try {
       const token = localStorage.getItem('wb_token');
-      const res = await fetch('http://127.0.0.1:8000/api/invoices/', {
+      const res = await fetch('https://wastebridge-backend.onrender.com/api/invoices/', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await res.json();
@@ -380,7 +380,7 @@ useEffect(() => {
          invoiceId={stripePaymentData.invoiceId}
          onSuccess={async (paymentIntentId) => {
     const token = localStorage.getItem('wb_token');
-    await fetch('http://127.0.0.1:8000/api/invoices/mark-paid', {
+    await fetch('https://wastebridge-backend.onrender.com/api/invoices/mark-paid', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

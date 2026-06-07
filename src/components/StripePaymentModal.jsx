@@ -17,7 +17,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Lock, X, CreditCard, CheckCircle } from 'lucide-react';
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = 'https://wastebridge-backend.onrender.com';
 
 const StripePaymentModal = ({ amount, description, invoiceId, onSuccess, onClose }) => {
   const [stripe, setStripe] = useState(null);

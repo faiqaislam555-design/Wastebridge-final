@@ -19,7 +19,7 @@ const CompanyProfile = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem('wb_token');
-        const res = await fetch('http://localhost:8000/api/operator/me', {
+        const res = await fetch('https://wastebridge-backend.onrender.com/api/operator/me', {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.ok) {
@@ -55,7 +55,7 @@ const CompanyProfile = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('wb_token');
-      await fetch('http://localhost:8000/api/operator/me', {
+      await fetch('https://wastebridge-backend.onrender.com/api/operator/me', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

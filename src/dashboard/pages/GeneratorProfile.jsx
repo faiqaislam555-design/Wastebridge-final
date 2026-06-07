@@ -55,7 +55,7 @@ const GeneratorProfile = () => {
         // Construct logo URL — backend serves from /uploads/
         if (profile?.logo_path) {
           const clean = profile.logo_path.replace(/^uploads[\\/]/, '');
-          setLogoImage(`http://localhost:8000/uploads/${clean}`);
+          setLogoImage(`https://wastebridge-backend.onrender.com/uploads/${clean}`);
         }
       } catch (err) {
         setMessage({ type: 'error', text: 'Failed to load profile data.' });
