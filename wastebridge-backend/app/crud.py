@@ -567,9 +567,8 @@ def operator_complete_pickup(
 
 def get_operator_stats(db: Session, operator_id: int) -> dict:
     incoming = db.query(func.count(models.PickupRequest.id)).filter(
-        models.PickupRequest.status == models.PickupStatus.pending,
-        models.PickupRequest.operator_profile_id == None,
-    ).scalar() or 0
+    models.PickupRequest.status == models.PickupStatus.pending,
+).scalar() or 0
 
     scheduled = db.query(func.count(models.PickupRequest.id)).filter(
         models.PickupRequest.operator_profile_id == operator_id,
