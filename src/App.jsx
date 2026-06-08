@@ -141,7 +141,7 @@ function App() {
               </AdminProvider>
             }>
               <Route path="dashboard" element={<AdminDashboard />} />
-              <Route path="users" element={<UserVerification />} />
+              <Route path="verifications" element={<UserVerification />} />
               <Route path="disputes" element={<DisputeResolution />} />
               <Route path="analytics" element={<Analytics />} />
               <Route index element={<AdminDashboard />} />
